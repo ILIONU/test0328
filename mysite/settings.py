@@ -26,7 +26,7 @@ SECRET_KEY = '&=_gg7-=$zm($1w7fihoimf6i8$@6km8hifkw@x#+b#6#=(^o0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'suwon_trash',
         'USER' : 'root',
         'PASSWORD' : '1234',
-        'HOST' : 'localhost',
+        'HOST' : '127.0.0.1',
         'PORT' : '3306',
     }
 }

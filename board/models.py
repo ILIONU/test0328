@@ -13,7 +13,7 @@ class Board(models.Model):
     parent_no = models.IntegerField(db_column='parent_no', default=0)
     b_count = models.IntegerField(db_column='b_count', default=0)
     b_date = models.DateTimeField(db_column='b_date', )
-    usage_flag = models.CharField(db_column='usage_flag', max_length=10, default='1')
+    #usage_flag = models.CharField(db_column='usage_flag', max_length=10, default='1')
 
     class Meta:
         managed = False

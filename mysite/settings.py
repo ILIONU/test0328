@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -39,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'board',
+    #'users',
+    'chart',
+    #'accounts',
+    'member',
 ]
 
 MIDDLEWARE = [
@@ -78,10 +83,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'suwon_trash',
+        'NAME': 'testdb',
         'USER' : 'root',
         'PASSWORD' : '1234',
-        'HOST' : '127.0.0.1',
+        'HOST' : '18.221.7.122',
         'PORT' : '3306',
     }
 }
@@ -109,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
 
 TIME_ZONE = 'UTC'
 
@@ -128,3 +133,22 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 ]
+
+#AUTH_USER_MODEL = 'accounts.User'
+
+# 로그인 이후 경로 수정
+#LOGIN_REDIRECT_URL = "home"
+#LOGOUT_REDIRECT_URL = 'home'
+
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+#SESSION_COOKIE_DOMAIN = '.overmap.me'
+
+#DAY_IN_SECONDS = 86400 # 가독성을 좋게 하기 위한 변수
+#SESSION_COOKIE_AGE = DAY_IN_SECONDS * 2 # 그냥 132800 로 입력해도 되지만, 이렇게 표기하면 더 가독성이 좋아짐
+
+
+#AUTH_USER_MODEL = '{app-name}.{User-model-name}'
+#AUTH_USER_MODEL = 'api.User'
+
+

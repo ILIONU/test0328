@@ -11,35 +11,102 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li><a href="/">Home</a></li>
-
-          <li class="drop-down"><a href="#">Board</a>
+          <li class="drop-down"><a href="board">Board</a>
             <ul>
               <li><a href="board">Board</a></li>
-              <li><a href="#" onclick="alert('Plan...')">댓글*</a></li>
-              <li><a href="#" onclick="alert('Plan...')">파일업로드*</a></li>
-              <li><a href="#" onclick="alert('Plan...')">Ajax*</a></li>
+              <li><a href="boardapi">Board (GraphQL)</a></li>
+              <li><a href="board_ajax">Board (Ajax)</a></li>
+              <li><a href="boardform">Board (Form)</a></li>
             </ul>
           </li>
-
-          <li class="drop-down"><a href="/ds_querytolist">Data Study</a>
+          <li><a href="album">Album</a></li>
+          <li class="drop-down"><a href="">Chart</a>
             <ul>
-              <li><a href="/ds_querytolist">Queryset > List</a></li>
-              <li><a href="/ds_orm">Dataset test</a></li>
+              <li><a href="/chart_bar">Bar chart</a></li>
+              <li><a href="/chart_bar2">예측 Bar</a></li>
+              <li><a href="/chart_bar3">db Bar</a></li>
             </ul>
           </li>
-
-          <li class="drop-down"><a href="#">Study</a>
+          <li class="drop-down"><a href="">Menus</a>
             <ul>
-              <li><a href="/markdown2" onclick="alert('Plan...')">Markdown*</a></li>
-              <li><a href="/markdown2" onclick="alert('Plan...')">API(GraphQL)*</a></li>
+              <li><a href="weblog">Web log(서버)</a></li>
+              <li><a href="weblog_front">Web log(Front)</a></li>
+              <li><a href="/graphql" target="_blank">GraphQL API</a></li>
+              <li class="drop-down"><a href="#">Down menu*</a>
+                <ul>
+                  <li><a href="#">Down 1*</a></li>
+                  <li><a href="#">Down 2*</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
-
-          <li><a href="http://www.globalintelligence.kr/" target="_blank">FAMILY</a></li>
-
-          <li class="get-started"><a href="#">Get Started</a></li>
+          <li class="drop-down">
+            {% if member_no == None %}
+              <a href="">(없음)</a>
+            {% else %} 
+              <a href="#"> {{ member_name }}님</a>
+            {% endif %}
+            <ul>
+              <li><a href="member_register">회원가입</a></li>
+              <li><a href="member_logout">Logout</a></li>
+              <li><a href="member_edit">정보수정</a></li>
+            </ul>
+          </li>
+          <li class="get-started"><a href="member_register">Register</a></li>
         </ul>
       </nav><!-- .nav-menu -->
 
     </div>
   </header><!-- End Header -->
+
+
+
+
+
+
+         {# <li class="drop-down"><a href="">Chart</a> #}
+          {#{% if user.is_authenticated %}#}
+            {#<ul>#}
+              {#<li><a href="chart_bar">Bar chart</a></li>#}
+              {#<li><a href="chart_bar2">예측 Bar</a></li>#}
+            {#</ul>#}
+          {#{% else %}#}
+            {#<ul>#}
+              {#<li><a href="{% url 'user:login' %}">Bar chart</a></li>#}
+              {#<li><a href="{% url 'user:login' %}">예측 Bar</a></li>#}
+            {#</ul>#}
+          {#{% endif %}#}
+          {#</li>#}
+
+
+
+
+          {#{% if user.is_authenticated %}#}  {# 로그인이 되어있는지 물어봄 #}
+          {#<li><a>환영합니다. {{ user.username }} 님!</a>#}
+
+          {#{% endif %}#}
+        
+         {# <form method="POST" action="{% url 'user:logout' %}">#}
+          {#{% csrf_token %} #}
+         {# <input type="submit" value="로그아웃">#}
+         {# </form>#}
+
+
+          {# <li class="get-started"><a href="{% url 'user:logout' %}">로그아웃</a></li> #}
+      
+
+
+      {#      {% if user.is_authenticated %}#}
+    <!-- 만약 로그인이 되어있으면 로그아웃 버튼이 나타나도록 -->
+  {#  <li class="nav-item" style="position:absolute; top: 10px; right: 50px;">#}
+   {#   <a class="nav-link" href="{% url 'user:logout' %}">Logout</a>#}
+   {# </li>#}
+   {# {% else %}#}
+    <!-- 로그인되어 있지 않으면 기존 버튼 그대로 -->
+  {#  <li class="nav-item" style="position:absolute; top: 10px; right: 100px;">#}
+    {#  <a class="nav-link" href="{% url 'user:signup' %}">SignUp</a>#}
+   {# </li>#}
+   {# <li class="nav-item" style="position:absolute; top: 10px; right: 50px;">#}
+   {#   <a class="nav-link" href="{% url 'user:login' %}">Login</a>#}
+   {# </li>#}
+   {# {% endif %}#}

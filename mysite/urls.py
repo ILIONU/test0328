@@ -23,6 +23,7 @@ urlpatterns = [
     
     #path('users/users/login/', include('board.urls')),
     path('', include('board.urls')),
+    path('', include('company.urls')),
     
     #path('', include('users.urls')),
     

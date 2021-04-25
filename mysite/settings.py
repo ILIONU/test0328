@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'chart',
     #'accounts',
     'member',
+    'company',
 ]
 
 MIDDLEWARE = [
